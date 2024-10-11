@@ -2,9 +2,7 @@ package com.api.controllers;
 
 import com.api.dtos.filters.ProductFilter;
 import com.api.dtos.models.ProductDTO;
-import com.api.dtos.models.ReviewDTO;
 import com.api.services.ProductService;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -36,5 +34,3 @@ public class ProductController {
     public void delete(@PathVariable("id") Integer id){
         productService.delete(id);
     }}
-
-//TODO разобраться с типами данных (long/Long и т.д.)
