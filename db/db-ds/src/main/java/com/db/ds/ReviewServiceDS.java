@@ -14,28 +14,17 @@ import java.util.List;
 @AllArgsConstructor(access = AccessLevel.PUBLIC)
 public class ReviewServiceDS {
 
-    //private final ReviewRepository reviewRepository;
     public List<Review> list() {
         return null;
-        //return reviewRepository.findAll();
     }
 
     public Review findById(int prdId){
         return null;
-       // return reviewRepository.findById(prdId);
     }
-    public void addReview(Review review){
-        //reviewRepository.save(review);
-    }
+    public void addReview(Review review){}
 
     public List<Review> getReviewsForProduct(int prdId){
         List<Review> returnList = new ArrayList<>();
-        //todo
-       /* for (Review review: reviewRepository.findAll()){
-            if(review.getProductId() == prdId)
-                returnList.add(review);
-        }
-        return returnList;*/
         return null;
     }
 }

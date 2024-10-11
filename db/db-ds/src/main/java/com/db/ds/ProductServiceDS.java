@@ -14,12 +14,11 @@ import java.util.List;
 @AllArgsConstructor(access = AccessLevel.PUBLIC)
 public class ProductServiceDS {
 
-    //todo private final ProductRepository productRepository;
     protected final DSLContext jooq;
 
     public List<Product> list() {
         //jooq.select().from()
-        return null; //todo productRepository.findAll();
+        return null;
     }
 
     public Product findById(int prdId){
@@ -30,20 +29,12 @@ public class ProductServiceDS {
     }
 
     public void addProduct(Product product){
-        //todo productRepository.save(product);
+
     }
 
     // TODO: rework without filter, but with conditions
     public List<Product> searchProduct(List<Condition> conditions){
         List<Product> test = new ArrayList<>();
-        /* todo
-        for(Product product: productRepository.findAll()){
-            if(product.getPrice() == productFilter.getPrice() &&
-                    product.getTitle().toLowerCase().equals(productFilter.getTitle().toLowerCase()) &&
-                    categoryFound(productFilter.getCategory(),product.getCategories())
-            )
-                test.add(product);
-        }*/
         return test;
     }
 
@@ -67,7 +58,5 @@ public class ProductServiceDS {
         return null;
     }
 
-    public void delete(int id){
-       // todo productRepository.deleteById(id);
-    }
+    public void delete(int id){}
 }

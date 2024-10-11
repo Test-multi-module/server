@@ -20,13 +20,4 @@ public class Product {
     private String description;
 
     private String categories;
-
-    public Product(String title, Integer id) {
-        this.id = id;
-        this.title = title;
-    }
-
-    public Integer getId() {
-        return id;
-    }
 }

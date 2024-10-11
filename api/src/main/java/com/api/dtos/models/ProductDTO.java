@@ -25,9 +25,4 @@ public class ProductDTO {//TODO
 
     @JsonProperty("categories")
     String categories;
-
-    public ProductDTO(String title, Integer id) {
-        this.id = id;
-        this.title = title;
-    }
 }
