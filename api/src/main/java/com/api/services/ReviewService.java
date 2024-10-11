@@ -1,8 +1,8 @@
 package com.api.services;
 
 import com.api.dtos.models.ReviewDTO;
-import com.db.models.Review;
-import com.db.services.ReviewServiceDS;
+import com.db.ds.ReviewServiceDS;
+import com.db.model.Review;
 import io.beanmapper.BeanMapper;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;

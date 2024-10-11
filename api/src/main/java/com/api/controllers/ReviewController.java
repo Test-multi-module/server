@@ -15,6 +15,7 @@ public class ReviewController {
         this.reviewService = reviewService;
     }
     @GetMapping("/{product-id}")
-    public List<ReviewDTO> getReviewsForProduct(@PathVariable("id") Integer prdId) {return reviewService.getReviewsForProduct(prdId);}
-
+    public List<ReviewDTO> getReviewsForProduct(@PathVariable("id") Integer prdId) {
+        return reviewService.getReviewsForProduct(prdId);
+    }
 }

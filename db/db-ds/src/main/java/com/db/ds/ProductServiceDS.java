@@ -1,4 +1,4 @@
-package com.ds;
+package com.db.ds;
 
 import com.db.model.Product;
 import lombok.AccessLevel;
@@ -23,6 +23,7 @@ public class ProductServiceDS {
     }
 
     public Product findById(int prdId){
+
         return null;
         //jooq.select().from(generated.tables.Product).where()
         //return productRepository.findById(prdId);

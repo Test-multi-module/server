@@ -1,4 +1,4 @@
-package com.ds;
+package com.db.ds;
 
 
 import com.db.model.Review;

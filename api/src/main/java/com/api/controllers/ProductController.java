@@ -15,7 +15,9 @@ public class ProductController {
     public ProductController(ProductService productService) {this.productService = productService;}
 
     @GetMapping("/{id}")
-    public ProductDTO getSomeProductById(@PathVariable("id") Integer id){return productService.findById(id);}
+    public ProductDTO getSomeProductById(@PathVariable("id") Integer id){
+        return productService.findById(id);
+    }
 
     @GetMapping()
     public List<ProductDTO> getProducts(){return productService.list();}
