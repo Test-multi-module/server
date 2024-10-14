@@ -10,6 +10,8 @@ import org.springframework.stereotype.Service;
 import java.util.ArrayList;
 import java.util.List;
 
+import static com.db.schema.generated.Tables.PRODUCT;
+
 @Service
 @AllArgsConstructor(access = AccessLevel.PUBLIC)
 public class ProductServiceDS {
@@ -17,12 +19,11 @@ public class ProductServiceDS {
     protected final DSLContext jooq;
 
     public List<Product> list() {
-        //jooq.select().from()
-        return null;
+        return jooq.select().from(PRODUCT).fetchInto(Product.class);
     }
 
     public Product findById(int prdId){
-
+       // jooq.select(PRODUCT)
         return null;
         //jooq.select().from(generated.tables.Product).where()
         //return productRepository.findById(prdId);

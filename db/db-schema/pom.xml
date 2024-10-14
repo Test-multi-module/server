@@ -5,7 +5,7 @@
     <parent>
         <groupId>com.server</groupId>
         <artifactId>db</artifactId>
-        <version>0.0.1</version>
+        <version>0.0.1-SNAPSHOT</version>
     </parent>
 
     <groupId>com.db</groupId>
@@ -75,6 +75,10 @@
                                     <name>org.jooq.meta.postgres.PostgresDatabase</name>
                                     <inputSchema>public</inputSchema>
                                 </database>
+                                <generate>
+                                    <daos>false</daos>
+                                    <pojos>false</pojos>
+                                </generate>
                                 <target>
                                     <packageName>com.db.schema.generated</packageName>
                                     <directory>src/main/java</directory>

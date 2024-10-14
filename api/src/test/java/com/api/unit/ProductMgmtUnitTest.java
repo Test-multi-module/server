@@ -1,6 +1,6 @@
 package com.api.unit;
 
-import com.db.models.Product;
+import com.db.model.Product;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;

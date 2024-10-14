@@ -7,10 +7,11 @@
     <parent>
         <groupId>com</groupId>
         <artifactId>server</artifactId>
-        <version>0.0.1</version>
+        <version>0.0.1-SNAPSHOT</version>
     </parent>
     <groupId>com.server</groupId>
     <artifactId>db</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
     <name>db</name>
     <description>db</description>
 
