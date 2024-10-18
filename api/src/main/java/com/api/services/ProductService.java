@@ -23,7 +23,9 @@ public class ProductService {
         return  beanMapper.map(productServiceDS.list(), ProductDTO.class);
     }
 
-    public ProductDTO findById(Integer prdId){return beanMapper.map(productServiceDS.findById(prdId), ProductDTO.class);}
+    public ProductDTO findById(Integer prdId){
+        return beanMapper.map(productServiceDS.findById(prdId), ProductDTO.class);
+    }
 
     public void addProduct(ProductDTO product){
         productServiceDS.addProduct(beanMapper.map(product, Product.class));

@@ -23,10 +23,7 @@ public class ProductServiceDS {
     }
 
     public Product findById(int prdId){
-       // jooq.select(PRODUCT)
-        return null;
-        //jooq.select().from(generated.tables.Product).where()
-        //return productRepository.findById(prdId);
+        return jooq.select().from(PRODUCT).where(PRODUCT.ID.eq(prdId)).fetchInto(Product.class).get(0);
     }
 
     public void addProduct(Product product){
