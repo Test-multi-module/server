@@ -48,7 +48,7 @@ public class Product extends TableImpl<ProductRecord> {
     /**
      * The column <code>public.product.id</code>.
      */
-    public final TableField<ProductRecord, Long> ID = createField(DSL.name("id"), SQLDataType.BIGINT.nullable(false).identity(true), this, "");
+    public final TableField<ProductRecord, Integer> ID = createField(DSL.name("id"), SQLDataType.INTEGER.nullable(false).identity(true), this, "");
 
     /**
      * The column <code>public.product.categories</code>.
@@ -68,7 +68,7 @@ public class Product extends TableImpl<ProductRecord> {
     /**
      * The column <code>public.product.rating</code>.
      */
-    public final TableField<ProductRecord, Integer> RATING = createField(DSL.name("rating"), SQLDataType.INTEGER.nullable(false), this, "");
+    public final TableField<ProductRecord, Integer> RATING = createField(DSL.name("rating"), SQLDataType.INTEGER, this, "");
 
     /**
      * The column <code>public.product.title</code>.
@@ -114,8 +114,8 @@ public class Product extends TableImpl<ProductRecord> {
     }
 
     @Override
-    public Identity<ProductRecord, Long> getIdentity() {
-        return (Identity<ProductRecord, Long>) super.getIdentity();
+    public Identity<ProductRecord, Integer> getIdentity() {
+        return (Identity<ProductRecord, Integer>) super.getIdentity();
     }
 
     @Override
@@ -154,7 +154,7 @@ public class Product extends TableImpl<ProductRecord> {
     // -------------------------------------------------------------------------
 
     @Override
-    public Row6<Long, String, String, Integer, Integer, String> fieldsRow() {
+    public Row6<Integer, String, String, Integer, Integer, String> fieldsRow() {
         return (Row6) super.fieldsRow();
     }
 }

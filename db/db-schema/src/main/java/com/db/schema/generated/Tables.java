@@ -4,6 +4,7 @@
 package com.db.schema.generated;
 
 
+import com.db.schema.generated.tables.FlywaySchemaHistory;
 import com.db.schema.generated.tables.Product;
 import com.db.schema.generated.tables.Review;
 
@@ -13,6 +14,11 @@ import com.db.schema.generated.tables.Review;
  */
 @SuppressWarnings({ "all", "unchecked", "rawtypes" })
 public class Tables {
+
+    /**
+     * The table <code>public.flyway_schema_history</code>.
+     */
+    public static final FlywaySchemaHistory FLYWAY_SCHEMA_HISTORY = FlywaySchemaHistory.FLYWAY_SCHEMA_HISTORY;
 
     /**
      * The table <code>public.product</code>.

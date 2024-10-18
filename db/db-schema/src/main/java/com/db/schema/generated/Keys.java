@@ -4,11 +4,14 @@
 package com.db.schema.generated;
 
 
+import com.db.schema.generated.tables.FlywaySchemaHistory;
 import com.db.schema.generated.tables.Product;
 import com.db.schema.generated.tables.Review;
+import com.db.schema.generated.tables.records.FlywaySchemaHistoryRecord;
 import com.db.schema.generated.tables.records.ProductRecord;
 import com.db.schema.generated.tables.records.ReviewRecord;
 
+import org.jooq.ForeignKey;
 import org.jooq.TableField;
 import org.jooq.UniqueKey;
 import org.jooq.impl.DSL;
@@ -26,6 +29,13 @@ public class Keys {
     // UNIQUE and PRIMARY KEY definitions
     // -------------------------------------------------------------------------
 
+    public static final UniqueKey<FlywaySchemaHistoryRecord> FLYWAY_SCHEMA_HISTORY_PK = Internal.createUniqueKey(FlywaySchemaHistory.FLYWAY_SCHEMA_HISTORY, DSL.name("flyway_schema_history_pk"), new TableField[] { FlywaySchemaHistory.FLYWAY_SCHEMA_HISTORY.INSTALLED_RANK }, true);
     public static final UniqueKey<ProductRecord> PRODUCT_PKEY = Internal.createUniqueKey(Product.PRODUCT, DSL.name("product_pkey"), new TableField[] { Product.PRODUCT.ID }, true);
     public static final UniqueKey<ReviewRecord> REVIEW_PKEY = Internal.createUniqueKey(Review.REVIEW, DSL.name("review_pkey"), new TableField[] { Review.REVIEW.ID }, true);
+
+    // -------------------------------------------------------------------------
+    // FOREIGN KEY definitions
+    // -------------------------------------------------------------------------
+
+    public static final ForeignKey<ReviewRecord, ProductRecord> REVIEW__FK_DEVICE_ATTESTATIONS_DEVICES = Internal.createForeignKey(Review.REVIEW, DSL.name("fk_device_attestations_devices"), new TableField[] { Review.REVIEW.PRODUCT_ID }, Keys.PRODUCT_PKEY, new TableField[] { Product.PRODUCT.ID }, true);
 }

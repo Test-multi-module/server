@@ -8,6 +8,9 @@ import com.db.schema.generated.Keys;
 import com.db.schema.generated.Public;
 import com.db.schema.generated.tables.records.ReviewRecord;
 
+import java.util.Arrays;
+import java.util.List;
+
 import org.jooq.Field;
 import org.jooq.ForeignKey;
 import org.jooq.Identity;
@@ -121,6 +124,20 @@ public class Review extends TableImpl<ReviewRecord> {
     @Override
     public UniqueKey<ReviewRecord> getPrimaryKey() {
         return Keys.REVIEW_PKEY;
+    }
+
+    @Override
+    public List<ForeignKey<ReviewRecord, ?>> getReferences() {
+        return Arrays.asList(Keys.REVIEW__FK_DEVICE_ATTESTATIONS_DEVICES);
+    }
+
+    private transient Product _product;
+
+    public Product product() {
+        if (_product == null)
+            _product = new Product(this, Keys.REVIEW__FK_DEVICE_ATTESTATIONS_DEVICES);
+
+        return _product;
     }
 
     @Override
