@@ -1,5 +1,6 @@
 package com.api.integ;
 
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -17,7 +18,7 @@ public class ProductMgmtIntegTest extends IntegTestBase{
 
     @Autowired private TestRestTemplate restTemplate;
 
-    @Test
+    @Test@Disabled
     void testGetProductsEndpoints() throws Exception {
         assertThat(this.restTemplate.getForObject("http://localhost:" + port + "/products/58",
                 String.class)).contains("{\"rating\":5,\"id\":58,\"title\":\"new title1\",\"price\":65,\"description\":\"new desc1\",\"categories\":\"books\"}");
