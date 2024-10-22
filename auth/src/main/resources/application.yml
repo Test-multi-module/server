@@ -1,0 +1,24 @@
+spring: #TODO set it according to your data. it is only template now!
+  security:
+    oauth2:
+      authorization:
+        client:
+          registration:
+            my-client:
+              client-id: my-client-id
+              client-secret: my-client-secret
+              authorization-grant-type: authorization_code
+              redirect-uri: http://localhost:8080/login/oauth2/code/my-client
+              scope: read,write
+          provider:
+            my-provider:
+              authorization-uri: http://localhost:8080/oauth2/authorize
+              token-uri: http://localhost:8080/oauth2/token
+              user-info-uri: http://localhost:8080/userinfo
+              user-name-attribute: sub
+      resourceserver:
+        jwt:
+          issuer-uri: http://localhost:8080/realms/myrealm
+          jwk-set-uri: http://localhost:8080/realms/myrealm/protocol/openid-connect/certs
+  server:
+    port: 8080

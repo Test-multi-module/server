@@ -8,14 +8,14 @@ import java.util.List;
 
 @RestController
 @RestControllerAdvice
-@RequestMapping("/reviews")
+@RequestMapping("api/private/reviews")
 public class ReviewController {
     private final ReviewService reviewService;
     public ReviewController(ReviewService reviewService) {
         this.reviewService = reviewService;
     }
     @GetMapping("/{product-id}")
-    public List<ReviewDTO> getReviewsForProduct(@PathVariable("id") Integer prdId) {
+    public List<ReviewDTO> getReviewsForProduct(@PathVariable("product-id") Integer prdId) {
         return reviewService.getReviewsForProduct(prdId);
     }
 }
