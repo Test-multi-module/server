@@ -28,7 +28,7 @@ public class ProductMgmtIntegTest extends IntegTestBase{
 
     @Test
     void test() {
-        assertThat(this.restTemplate.getForObject("http://localhost:" + port + "/api/public/products/2",
+        assertThat(this.restTemplate.getForObject("http://localhost:" + port + "/api/private/products/2",
                 String.class)).contains("\"rating\":4,\"id\":2,\"title\":\"Space Odyssey\",\"price\":15,\"description\":\"Science fiction novel\",\"categories\":\"Books\"");
     }
 }

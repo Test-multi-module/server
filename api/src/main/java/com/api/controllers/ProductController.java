@@ -3,19 +3,21 @@ package com.api.controllers;
 import com.api.dtos.filters.ProductFilter;
 import com.api.dtos.models.ProductDTO;
 import com.api.services.ProductService;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 @RestController
 @RestControllerAdvice
-@RequestMapping("/api/public/products")
+@RequestMapping("/api/private/products")
 public class ProductController {
     private final ProductService productService;
     public ProductController(ProductService productService) {this.productService = productService;}
 
+    @PreAuthorize("hasRole('ADMIN')")
     @GetMapping("/{id}")
-    public ProductDTO getSomeProductById(@PathVariable("id") Integer id){
+    public ProductDTO getSomeProductById(@PathVariable("id") Integer id) {
 
         return productService.findById(id);
     }
